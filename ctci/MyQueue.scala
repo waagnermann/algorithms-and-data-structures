@@ -4,35 +4,29 @@ class MyQueue {
 	private val stackNewestOnTop = new Stack[Int]()
 	private val stackOldestOnTop = new Stack[Int]()
 
+	private def shiftStack: Unit = {
+		if (stackOldestOnTop.isEmpty) {
+			while (stackNewestOnTop.nonEmpty) {
+				stackOldestOnTop.push(stackNewestOnTop.pop())
+			}
+		}
+	}
+
 	def enqueue(value: Int) = {
 		stackNewestOnTop.push(value)
 	}
 
-	def peek() = {
-		if (stackOldestOnTop.nonEmpty) {
-			stackOldestOnTop.head
-		}
-		else {
-			while (stackNewestOnTop.nonEmpty) {
-				stackOldestOnTop.push(stackNewestOnTop.pop())
-			}
-			stackOldestOnTop.head
-		}
+	def peek(): Int = {
+		shiftStack
+		stackOldestOnTop.head
 	}
 
-	def dequeue() = {
-		if (stackOldestOnTop.nonEmpty) {
-			stackOldestOnTop.pop()
-		}
-		else {
-			while (stackNewestOnTop.nonEmpty) {
-				stackOldestOnTop.push(stackNewestOnTop.pop())
-			}
-			stackOldestOnTop.pop()
-		}
+	def dequeue(): Int = {
+		shiftStack
+		stackOldestOnTop.pop()
 	}
+
 }
-
 object MyQueue {
 
 	val queue = new MyQueue
