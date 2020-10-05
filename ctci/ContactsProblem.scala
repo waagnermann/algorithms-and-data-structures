@@ -71,6 +71,7 @@ object ContactsProblem extends App {
 	trie.add("genna")
 	trie.add("alex")
 	trie.add("andy")
+	trie.add("gambles")
 
 	println(trie.findCount("ga"))
 }
