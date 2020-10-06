@@ -41,7 +41,7 @@ object HeapImplementation extends App {
 			var index: Int = 0
 			var done: Boolean = false
 			while (hasLeftChild(index) && !done) {
-				val smallerChildIndex: Int = if (getLeftChildIndex(index) > getRightChildIndex(index)) {
+				val smallerChildIndex: Int = if (rightChild(index) < leftChild(index)) {
 					getRightChildIndex(index)
 					} else getLeftChildIndex(index)
 
@@ -82,14 +82,16 @@ object HeapImplementation extends App {
 	}
 
 	val minIntHeap: MinIntHeap = new MinIntHeap
+	minIntHeap.add(25)
 	minIntHeap.add(10)
 	minIntHeap.add(15)
 	minIntHeap.add(17)
 	minIntHeap.add(20)
-	minIntHeap.add(25)
 	minIntHeap.add(3)
 	println(minIntHeap.poll())
 	println(minIntHeap.poll())
-
-	// println(minIntHeap.peek())
+	println(minIntHeap.poll())
+	println(minIntHeap.poll())
+	println(minIntHeap.poll())
+	println(minIntHeap.poll())
 }
