@@ -1,10 +1,12 @@
 import scala.collection.mutable.PriorityQueue
 
 object RunningMedianProblem extends App {
+	/*Iterating over an array, calculate the median of the resulting array on each iteration*/
+
 	class Solution {
 		
 		private def getSmallerHeap(left: PriorityQueue[Int], right: PriorityQueue[Int]): PriorityQueue[Int] = {
-			if (left.sizeCompare(right.size) == -1) {
+			if (left.sizeCompare(right) == -1) {
 				left
 			} else {
 				right
@@ -36,7 +38,7 @@ object RunningMedianProblem extends App {
 			}
 		}
 
-		private def calculateMedian(lowers: PriorityQueue[Int], highers: PriorityQueue[Int]) = {
+		private def calculateMedian(lowers: PriorityQueue[Int], highers: PriorityQueue[Int]): Double = {
 			val smallerHeap: PriorityQueue[Int] = getSmallerHeap(lowers, highers)
 			val biggerHeap: PriorityQueue[Int] = getBiggerHeap(lowers, highers)
 
@@ -49,7 +51,7 @@ object RunningMedianProblem extends App {
 			}
 		}
 
-		private def getMedian(number: Int, lowers: PriorityQueue[Int], highers: PriorityQueue[Int]) = {
+		private def getMedian(number: Int, lowers: PriorityQueue[Int], highers: PriorityQueue[Int]): Double = {
 			addNumber(number, lowers, highers)
 			rebalance(lowers, highers)
 			calculateMedian(lowers, highers)
@@ -66,5 +68,5 @@ object RunningMedianProblem extends App {
 	val solution: Solution = new Solution
 	val array: Array[Int] = Array(5, 15, 1, 3)
 	val medians: Array[Double] = solution.getMedians(array)
-	println(medians.toList)
+	println(s"Medians: ${medians mkString ("[", ", ", "]")}")
 }
