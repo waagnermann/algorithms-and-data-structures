@@ -1,4 +1,5 @@
 object AnagramsProblem {
+	/* Given two strings define whether they anagrams or not*/
 	def countLetters(string: String): Map[Char, Int] = {
 		string.foldLeft(Map.empty[Char, Int])((map, letter) => map updated (letter.toLower, map.getOrElse(letter.toLower, 0) + 1))
   	}
