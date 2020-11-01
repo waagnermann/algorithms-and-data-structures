@@ -22,6 +22,7 @@ object TwoSum {
 
 	Input: nums = [3,3], target = 6
 	Output: [0,1]
+        Below pure functional solution for the problem is provided 
 	*/
 
 	def twoSum(nums: Array[Int], target: Int): Array[Int] = {
