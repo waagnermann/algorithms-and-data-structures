@@ -3,21 +3,16 @@ object Solution  {
 
 	def run(array: Array[Int], target: Int): Boolean = {
 
-		def binarySearch(left: Int, right: Int): Boolean = {
-			if (left > right) false			
-			else {
-		
-				val middleIndex = (left + right) / 2
-				val candidate = array(middleIndex)				
-				if (left == right) candidate == target
-				else {
-		
-					if (target == candidate) true
-					else if (target < candidate) binarySearch(left, middleIndex)
-					else binarySearch(middleIndex + 1, right)
-				}
-			} 
-		}
+		def binarySearch(left: Int, right: Int): Boolean = if (left > right) false else {
+			val middleIndex = (left + right) / 2
+			val candidate = array(middleIndex)				
+			
+			if (left == right) candidate == target else {
+				if (target == candidate) true
+				else if (target < candidate) binarySearch(left, middleIndex)
+				else binarySearch(middleIndex + 1, right)
+			}
+		} 
 
 		binarySearch(0, array.length - 1)
 	}
