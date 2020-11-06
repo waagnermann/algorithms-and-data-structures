@@ -27,7 +27,6 @@ object ShortestPathProblem {
 
 			while (queue.nonEmpty) {
 				val currentNode: Int = queue.dequeue
-				println(currentNode)
 				val currentNodeNeighbors: List[Int] = adj(currentNode)
 				val currentNodeDistance: Int = distances(currentNode)
 				currentNodeNeighbors foreach { member => setShorterDistance(currentNodeDistance, member)}
