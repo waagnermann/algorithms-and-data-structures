@@ -26,6 +26,7 @@ object FindSubstringProblem {
 		val patternSize = pattern.length 
 
 		def computeKmp(k: Int, j: Int): Unit = k == textSize match {
+			
 			case true => j == patternSize match {
 				case true => {
 					println(s"Found pattern at ${textSize - patternSize} index")
@@ -33,8 +34,12 @@ object FindSubstringProblem {
 				}
 				case false => println("Work is done!")
 			} 
+
 			case false => j == patternSize match {
-				case true => println(s"Found pattern at ${k - j} index")
+				case true => {
+					println(s"Found pattern at ${k - j} index")
+					computeKmp(k, lps(j - 1))
+				}
 				case false => {
 					if (text(k) == pattern(j)) computeKmp(k + 1, j + 1)
 					else {
@@ -50,7 +55,8 @@ object FindSubstringProblem {
 	}
 
 	def main(args: Array[String]): Unit = {
-		kmp("abcabeabcabcabd", "abcabd")
-		kmp("ABABDABACDABABCABAB", "ABABCABAB")
+		// kmp("abcabeabcabcabd", "abcabd")
+		// kmp("ABABDABACDABABCABAB", "ABABCABAB")
+		kmp("AABAACAADAABAABA", "AABA")
 	}
 }
