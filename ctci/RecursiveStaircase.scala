@@ -8,6 +8,6 @@ object RecursiveStaircase {
 	}
 
 	def main(args: Array[String]): Unit = {
-		println(w())
+		println(w(5))
 	}
 }
