@@ -58,9 +58,7 @@ object HeapImplementation extends App {
 		def peek(): Int = if (size == 0) {
 			val message: String = "Heap is empty"
 			throw new IllegalStateException(message)
-		} else {
-			items(0)
-		}
+		} else items(0)
 
 		def poll(): Int = if (size == 0) {
 			val message: String = "Heap is empty"
