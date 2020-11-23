@@ -33,10 +33,13 @@ object CoinChange {
 
 	def main(args: Array[String]): Unit = {
 		println(s"Input: coins = [1,2,5], amount = 11, \nOutput: ${coinChange(Array(1, 2, 5), 11)}")
+		println(s"Input: coins = [1,2,3], amount = 6, \nOutput: ${coinChange(Array(1, 2, 3), 6)}")
 		println(s"Input: coins = [2], amount = 3, \nOutput: ${coinChange(Array(2), 3)}")
 		println(s"Input: coins = [1], amount = 0, \nOutput: ${coinChange(Array(1), 0)}")
 		println(s"Input: coins = [1], amount = 1, \nOutput: ${coinChange(Array(1), 1)}")
 		println(s"Input: coins = [1], amount = 2, \nOutput: ${coinChange(Array(1), 2)}")
 		println(s"Input: coins = [1, 2, 25], amount = 51, \nOutput: ${coinChange(Array(1, 2, 25), 51)}")
+		println(s"Input: coins = [1, 29], amount = 128, \nOutput: ${coinChange(Array(1, 29), 128)}")
+		println(s"Input: coins = [1], amount = 160, \nOutput: ${coinChange(Array(1), 160)}")
 	}
 }
