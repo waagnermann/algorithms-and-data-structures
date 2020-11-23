@@ -21,6 +21,7 @@ object CoinChange {
 	    					res
 	    			}
 	    		}
+
 	    		changes foreach { res => if (res >= 0 && res < min) min = res + 1 }
 	    		if (min == Int.MaxValue) -1
 	    		else min
