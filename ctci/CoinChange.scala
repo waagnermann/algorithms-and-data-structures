@@ -13,7 +13,7 @@ object CoinChange {
 	    	else {
 	    		var min: Int = Int.MaxValue
 	    		val changes = coins map { coin =>
-	    			cached.get(amount - coin) match {
+	    			cached get(amount - coin) match {
 	    				case Some(value) => value
 	    				case None => 
 	    					val res = run(coins, amount - coin)
