@@ -17,8 +17,7 @@ object CountUniquePaths {
 					val rightwardsCache: Int = run(grid, row, col + 1, maxRow, maxCol)
 					val cache: Int = downwardsCache + rightwardsCache
 					cached((row, col)) = cache
-					//cache //use run(grid, row, col, maxRow, maxCol) to make caching more visible
-					run(grid, row, col, maxRow, maxCol)
+					cache //use run(grid, row, col, maxRow, maxCol) to make caching more visible
 			}
 		}
 
