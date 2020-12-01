@@ -20,7 +20,13 @@ object SortWithComparator {
     }
 
 	def main(args: Array[String]): Unit = {
-		val array: Array[Player] = Array(Player("Sarah", 400), Player("John", 1971), Player("Gayle", 1903), Player("Davis", 1400), Player("Andy", 1400), Player("Tobin", 1400))
+		val array: Array[Player] = Array(
+			Player("Sarah", 400),
+			Player("John", 1971),
+			Player("Gayle", 1903),
+			Player("Davis", 1400),
+			Player("Andy", 1400), Player("Tobin", 1400)
+		)
 		val sortedArray: Array[Player] = quickSort(array)
 		println(sortedArray mkString ", ")
 	}
