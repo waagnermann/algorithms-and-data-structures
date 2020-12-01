@@ -25,7 +25,8 @@ object SortWithComparator {
 			Player("John", 1971),
 			Player("Gayle", 1903),
 			Player("Davis", 1400),
-			Player("Andy", 1400), Player("Tobin", 1400)
+			Player("Andy", 1400),
+			Player("Tobin", 1400)
 		)
 		val sortedArray: Array[Player] = quickSort(array)
 		println(sortedArray mkString ", ")
