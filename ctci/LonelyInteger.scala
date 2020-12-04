@@ -1,5 +1,5 @@
 object LonelyInteger {
-/* Given an array of integers find one that appears only ince in there. That value will be the lonely integer*/
+/* Given an array of integers find one that appears only ince in there. That value will be the lonely integer. ^ - XOR operator in Scala*/
 
 	def getLonelyInteger[T <: Int](array: Array[T]) = array.foldLeft(0)(_ ^ _)
 
