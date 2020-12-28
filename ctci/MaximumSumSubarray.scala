@@ -1,4 +1,7 @@
- import scala.math.max
+import scala.math.max
+
+/*Given an integer array nums, find the contiguous subarray (containing at least one number)
+ which has the largest sum and return its sum.*/
 
 object MaximumSubarray {
 	
