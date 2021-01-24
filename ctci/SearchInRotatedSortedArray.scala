@@ -1,6 +1,5 @@
 object SearchInRotatedSortedArray {
 	def searchRecursive(nums: Array[Int], target: Int, currentIndex: Int): Int = {
-		println(nums mkString("[", ", ", "]"))
 		if (nums.length == 1) {
 			if (nums(0) == target) currentIndex else -1
 		} else {
