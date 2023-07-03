@@ -8,6 +8,28 @@ object AnagramsProblem {
 	  	countLetters(left) == countLetters(right)
 	}
 
+	def charsToRemoveCount(leftMap: Map[Char, Int], rightMap: Map[Char, Int]): Int = {
+		var amount = 0
+
+		leftMap.foreach { case (char, leftFreq) =>
+		  val incrementor = rightMap.get(char) match {
+		    case Some(rightFreq) => 0
+		    case None => leftFreq
+		  }
+		  amount += incrementor
+		}
+
+		rightMap.foreach { case (char, rightFreq) =>
+		  val incrementor = leftMap.get(char) match {
+		    case Some(leftFreq) => (rightFreq - leftFreq).abs
+		    case None => rightFreq
+		  }
+		  amount += incrementor
+		}
+
+		amount
+	}
+
 	def main(args: Array[String]): Unit = {
 		println(areAnagrams("elements", "emelstne")) // true
 		println(areAnagrams("", "")) // true
